@@ -9,7 +9,7 @@ function header() {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
-      className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+      className="col-span-8 place-self-center text-center sm:text-left justify-self-start py-32"
     >
       <div className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
