@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
@@ -33,7 +34,9 @@ function header() {
             Look no further, BikeWise is here to make your cycling experience
             smoother than ever.
           </p>
-          <Button>Get Started</Button>
+          <Link href={"/chat"}>
+            <Button>Get Started</Button>
+          </Link>
         </div>
       </div>
     </motion.header>

@@ -23,19 +23,19 @@ function features() {
         "Receive tailored suggestions based on your bike model, riding style, and preferences. ",
     },
     {
-        id: 1,
+        id: 4,
         title: "Ask Anything, Anytime",
         description:
           "Have a question about a specific bicycle part? Simply ask BikeWise.",
       },
       {
-        id: 2,
+        id: 5,
         title: "Comprehensive Part Database",
         description:
           "Our extensive database covers a wide range of bicycle parts and accessories.",
       },
       {
-        id: 3,
+        id: 6,
         title: "Personalized Recommendations",
         description:
           "Receive tailored suggestions based on your bike model, riding style, and preferences. ",
