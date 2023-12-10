@@ -21,10 +21,11 @@ function header() {
         Follow along on Twitter
       </Link> */}
           <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Welcome to{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">
-              BikeWise
+            Welcome to{"  "}
+            <span className=" text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">
+              BikeWise.
             </span>
+            Your AI bicycle mechanic
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             Are you tired of fumbling through confusing manuals or watching

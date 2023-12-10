@@ -22,6 +22,24 @@ function features() {
       description:
         "Receive tailored suggestions based on your bike model, riding style, and preferences. ",
     },
+    {
+        id: 1,
+        title: "Ask Anything, Anytime",
+        description:
+          "Have a question about a specific bicycle part? Simply ask BikeWise.",
+      },
+      {
+        id: 2,
+        title: "Comprehensive Part Database",
+        description:
+          "Our extensive database covers a wide range of bicycle parts and accessories.",
+      },
+      {
+        id: 3,
+        title: "Personalized Recommendations",
+        description:
+          "Receive tailored suggestions based on your bike model, riding style, and preferences. ",
+      },
   ];
 
   return (
@@ -29,11 +47,9 @@ function features() {
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay: 0.4 }}
-    className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
   >
     <section
-      id="features"
-      className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
+      className=" space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
     >
       <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
