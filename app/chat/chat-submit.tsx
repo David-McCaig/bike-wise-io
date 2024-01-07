@@ -11,7 +11,7 @@ interface ChatSubmitProps {
 function ChatSubmit({value, onChange, onSubmit}:ChatSubmitProps) {
   return (
     <form
-    className="w-2/4 h-40 bg-[#FAFAF9] flex justify-end items-start pb-12 sticky bottom-0"
+    className="w-full h-24 bg-[#FAFAF9] flex justify-end items-start sticky bottom-0"
     onSubmit={onSubmit}
   >
     <div className="flex w-full items-center">
