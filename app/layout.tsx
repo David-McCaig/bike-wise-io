@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/providers";
-import {SessionProvider} from "next-auth/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,10 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children, session
+  children
 }: {
   children: React.ReactNode;
-  session: any
 }) {
   return (
     <html lang="en">
