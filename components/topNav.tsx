@@ -7,18 +7,22 @@ import GoogleLogo from "../public/Google__G__logo.svg.png";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Button } from "./ui/button";
+import { useSession, signOut, signIn } from "next-auth/react";
 
 const navigation = [{ name: "Dashboard", href: "#", current: false }];
-
-let user = false;
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function TopNav() {
+  const { data: session, status } = useSession();
+  console.log(session)
   return (
-    <Disclosure as="nav" className="bg-[#FAFAF9] max-w-[100rem] mx-auto sticky top-0">
+    <Disclosure
+      as="nav"
+      className="bg-[#FAFAF9] max-w-[100rem] mx-auto sticky top-0"
+    >
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6  ">
@@ -46,7 +50,7 @@ export default function TopNav() {
                 </div>
                 <div className="hidden sm:ml-6 sm:block"></div>
               </div>
-              {user ? (
+              {status === "authenticated" ? (
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:mr-4 sm:pr-0">
                   <div className="sm:flex space-x-4 hidden">
                     {navigation.map((item) => (
@@ -66,10 +70,12 @@ export default function TopNav() {
                       <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <img
+                        <Image
                           className="h-8 w-8 rounded-full"
-                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                          alt=""
+                          width={35}
+                          height={35}
+                          src={session?.user?.image ?? ""}
+                          alt={`${session?.user?.name} profile`}
                         />
                       </Menu.Button>
                     </div>
@@ -85,15 +91,15 @@ export default function TopNav() {
                       <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <Menu.Item>
                           {({ active }) => (
-                            <a
-                              href="#"
+                            <div
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
                               )}
+                              onClick={() => signOut()}
                             >
                               Sign out
-                            </a>
+                            </div>
                           )}
                         </Menu.Item>
                       </Menu.Items>
@@ -102,7 +108,10 @@ export default function TopNav() {
                 </div>
               ) : (
                 <>
-                  <Button className="hidden sm:flex h-8 px-2 bg-[#FAFAF9] text-slate-800 border border-slate-500 hover:bg-[#FAFAF9] hover:text-slate-500 hover:border-slate-400">
+                  <Button
+                    className="hidden sm:flex h-8 px-2 bg-[#FAFAF9] text-slate-800 border border-slate-500 hover:bg-[#FAFAF9] hover:text-slate-500 hover:border-slate-400"
+                    onClick={() => signIn()}
+                  >
                     <Image
                       className="mr-2"
                       src={GoogleLogo}
@@ -118,7 +127,7 @@ export default function TopNav() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            {user ? (
+            {status === "authenticated" ? (
               <div className="space-y-1 px-2 pb-3 pt-2">
                 {navigation.map((item) => (
                   <Disclosure.Button

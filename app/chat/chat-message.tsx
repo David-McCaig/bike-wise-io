@@ -3,10 +3,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ChatMessageProps } from "@/lib/definitions";
 
 function ChatMessage({ chatData }: ChatMessageProps) {
+  
   return (
-    <section className="w-full bg-[#FAFAF9] lg:mx-12 lg:w-[30rem] xl:w-[40rem] pb-12 ">
+    <section className="w-full h-screen bg-[#FAFAF9] lg:mx-12 lg:w-[30rem] xl:w-[40rem] pb-12 ">
       <div className="flex flex-col justify-start items-start w-full overflow-hidden h-full">
-        {chatData.map((m,i) => (
+        {chatData.map((m) => (
           <div
             key={m.id}
             className="flex flex-col justify-start items-start w-full"
