@@ -1,6 +1,6 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ChatMessageProps } from "@/lib/definitions";
+import { ChatMessageProps } from "@/app/lib/definitions";
 
 function ChatMessage({ chatData }: ChatMessageProps) {
   

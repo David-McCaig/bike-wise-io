@@ -14,7 +14,7 @@ import GoogleAdd from "@/components/googleAdd";
 
 export default function Chat({}) {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
-
+console.log(messages)
   return (
     <main className="w-full h-max p-6 bg-[#FAFAF9] lg:flex lg:justify-center max-w-[100rem] mx-auto">
     

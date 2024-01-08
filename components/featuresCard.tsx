@@ -1,6 +1,6 @@
 
 import React from "react";
-import { featuresCardProps } from "@/lib/definitions";
+import { featuresCardProps } from "@/app/lib/definitions";
 
 function featuresCard({ title, description }: featuresCardProps) {
   return (
